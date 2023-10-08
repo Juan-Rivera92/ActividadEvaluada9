@@ -1,0 +1,18 @@
+document.getElementById('convertForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Valor ficticio de conversión
+    let dollarToBitcoinRate = 0.000021;  // Suponiendo que 1 dólar es igual a 0.000021 Bitcoin
+    let dollarToColonesRate = 8.75;      // Suponiendo que 1 dólar es igual a 8.75 colones salvadoreños
+
+    let dollarAmount = parseFloat(document.getElementById('dollars').value);
+    
+    // Verificamos si se está obteniendo el valor correcto
+    console.log("Cantidad en dólares: ", dollarAmount);
+
+    let bitcoinValue = dollarAmount * dollarToBitcoinRate;
+    let colonesValue = dollarAmount * dollarToColonesRate;
+
+    document.getElementById('bitcoinValue').value = bitcoinValue.toFixed(6) + " BTC";
+    document.getElementById('colonesValue').value = colonesValue.toFixed(2) + " SVC";
+});
